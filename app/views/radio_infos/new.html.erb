@@ -1,0 +1,40 @@
+<div class="form-wrapper">
+  <%= form_with model: @radio, class: "new-form", local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="new-field">
+      <%= f.label :video, class: "new-label" %><br />
+      <%= f.file_field :video, autofocus: true, autocomplete: "video", class: "new-form" %>
+    </div>
+
+    <div class="new-field">
+      <%= f.label :info, class: "new-label" %>
+      <div>第<%= f.text_field :info, autofocus: true, autocomplete: "info", class: "new-form" %>回　(※半角数字)</div>
+    </div>
+
+    <div class="new-field">
+      <%= f.label :guest, class: "new-label" %>
+      <%= f.text_field :guest, autofocus: true, autocomplete: "guest", class: "new-form" %>さん
+    </div>
+
+    <div class="new-field">
+      <%= f.label :time_info, class: "new-label" %>
+      約<%= f.text_field :time_info, autocomplete: "time-info", class: "new-form" %>分の音声です　(※半角数字)
+    </div>
+
+    <div class="new-field">
+      <%= f.label :radio_contents, class: "new-label" %>
+      <%= f.fields_for :radio_contents do |radio_content| %>
+        <%= render "radio_content_fields", f: radio_content %>
+      <% end %>
+      <div id = "links">
+        <%= link_to_add_association "追加", f, :radio_contents %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Go! Cheer Up!", class: "login-btn" %>
+    </div>
+    <%= link_to "▶Back to Top", root_path, class: "top-btn" %>
+  <% end %>
+</div>

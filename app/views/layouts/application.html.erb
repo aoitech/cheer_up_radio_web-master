@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CheerUpRadio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="header-inner">
+        <%= link_to "Cheer Up Radio", root_path, class: "logo" %>
+        <% if user_signed_in? %>
+            <% if can? :manage, current_user %>
+            <%= link_to 'New Radio', new_radio_info_path, class: "header-link new" %>
+            <div class="header-links">
+              <%= link_to current_user.nickname, rails_admin_path, class: "header-link name" %>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "header-link" %>
+            <% else %>
+              <div class="header-links">
+              <div class="header-link name"><%= "Hello, #{current_user.nickname}" unless can? :manage, current_user%></div>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "header-link" %>
+            <% end %>
+        <% else %>
+            <div class="header-links">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "header-link sign" %>
+            <%= link_to 'Sign In', new_user_session_path, class: "header-link sign" %>
+        <% end %>
+        </div>
+      </div>
+    </header>
+    <div id="border"></div>
+    <%= render 'layouts/notifications'%>
+    <%= yield %>
+
+    <footer class="footer">
+      <p class="copyright">Copyright © 2020 Cheer Up Radio dev Team rights reserved.</p>
+    </footer>
+
+  </body>
+</html>

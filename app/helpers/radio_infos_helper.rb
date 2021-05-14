@@ -1,0 +1,2 @@
+module RadioInfosHelper
+end

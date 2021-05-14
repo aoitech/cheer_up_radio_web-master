@@ -1,0 +1,12 @@
+<main class="main">
+  <div class="inner">
+    <h1 class="page-heading">Radio <span>C</span>ontents</h1>
+    <div class="radio__wrapper">
+      <% if @radio_infos.length != 0%>
+        <%= render partial: "radio_info", collection: @radio_infos %>
+      <% else%>
+        <h3>まだ投稿してないよ！しばしお待ちを！</h3>
+      <% end%>
+    </div>
+  </div>
+</main>

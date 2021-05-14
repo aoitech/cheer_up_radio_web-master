@@ -1,0 +1,20 @@
+<div class="user-form">
+<h2 class="login">- Sign in -</h2>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label "Email", for: "user_email", class: "form-label" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "form-label" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-field" %>
+  </div>
+
+  <%= f.submit "Sign in", class: "login-btn" %>
+<% end %>
+</div>

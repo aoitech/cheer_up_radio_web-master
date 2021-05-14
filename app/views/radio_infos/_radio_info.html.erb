@@ -1,0 +1,31 @@
+<div class="radio">
+  <div class="radio_movie_img">
+    <video src="<%= url_for(radio_info.video) %>" type="video/mp4" controls></video>
+  </div>
+  <div class="radio_info_body">
+    <h2 class="radio__title">第<%= radio_info.info %>回</h2>
+    <div class="radio__info_font">
+      <p class="radio__guest">ゲスト：<%= radio_info.guest %>さん</p>
+      <% if user_signed_in? %>
+        <% if can? :manage, current_user %>
+          <p class="radio__count">再生回数：<span id="radio_views" >回</span></p>
+        <% end %>
+      <% end %>
+      <a class="radio__index_url" data-id=<%= radio_info.id %>>詳細</a>
+    </div>
+    <div class="radio__index" data-id=<%= radio_info.id %> style="display:none;">
+      <p class="radio__contents">目次</p>
+      <table class="radio__index__table">
+          <p colspan="2" class="table_title">【全部で約<%= radio_info.time_info %>分の音声コンテンツです。】</p>
+        <tr>
+          <th class="table_time">time</th><th class="table_content">contents</th>
+        </tr>
+        <% radio_info.radio_contents.each do |radio_content|%>
+        <tr>
+          <td class="table_time"><%= radio_content.time %></td><td class="table_content"><%= radio_content.content %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

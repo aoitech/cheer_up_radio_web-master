@@ -1,0 +1,20 @@
+.flash-red {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.flash {
+  color: white;
+  text-align: center;
+}
+
+.flash__alert {
+  background-color: red;
+}
+
+.flash__notice {
+  background-color: blue;
+}
+.flash__recaptcha_error {
+  background-color: red;
+}

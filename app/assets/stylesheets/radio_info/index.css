@@ -1,0 +1,180 @@
+.header {
+  position: relative;
+  padding: 7px 0 15px 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid orange ;
+ }
+#border {
+  border-bottom: solid 1px #999;
+  width: 100%;
+  margin: 3px 0 48px 0;
+}
+ .header-inner {
+  width: 100%;
+  margin: auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+ }
+ .header-links {
+  display: flex;
+ }
+ .header-link {
+   padding: 7px 8px 7px 5px;
+   border: 1px solid #999;
+   margin-right: 10px;
+   font-size: 25px;
+ }
+ .new {
+  position: relative;
+  padding: 7px;
+  left: calc();
+  color: orange;
+  border-color: orange;
+ }
+ .name {
+   font-size: 30px;
+   font-weight: bold;
+   border: none;
+ }
+ .inner {
+  width: 1024px;
+  margin: 0 auto;
+ }
+ .logo {
+  font-size: 50px;
+  font-family: 'Caveat', cursive;
+ }
+ .page-heading {
+  font-size: 40px;
+  /* font-weight: bold; */
+  margin-bottom: 28px;
+ }
+ .radio__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+ form {
+  position: relative;
+  height: 100vh;
+ }
+ .radio {
+  width: 300px;
+  margin-bottom: 40px;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+ }
+ .radio_movie_img {
+  margin-bottom: 16px;
+  height: 300px;
+  width: 300px;
+  background-color: black;
+ }
+ video {
+   height: 300px;
+   width:  300px;
+ }
+ .radio__title {
+  font-size: 24px;
+  margin-bottom: 8px;
+ }
+ .radio__info_font{
+   font-size: 18px;
+ }
+ .radio__guest{
+   font-weight: bold;
+ }
+ .radio__index_url{
+   color: blue;
+  }
+.radio__index {
+  font-size: 14px;
+}
+.radio__index__table{
+  border: 1px solid black;
+}
+.radio__index__table th,.radio__index__table td{
+  border: 1px solid black;
+}
+.radio__index__table th{
+  padding: 2px;
+}
+.radio__index__table td{
+  padding: 2px;
+}
+.table_title{
+  width: 275px;
+}
+.table_time {
+  width: 75px;
+}
+.table_content{
+  width: 250px;
+}
+.main {
+  height: calc(100vh - 116px - 50px);
+}
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+ }
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+ }
+body {
+   height: 100vh;
+   position: relative;
+ }
+
+ /* タブレット表示時 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+}
+
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .main {
+    height: 120vh;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .logo {
+    font-size: 30px;
+  }
+  .header-inner {
+    margin: 5px 5px 0 5px;
+  }
+  .header-link {
+    font-size: 15px;
+    padding: 7px;
+    margin-right: 10px;
+  }
+  .name{
+    font-size: 20px;
+  }
+  .radio__wrapper {
+    justify-content: space-around;
+   }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    font-size: 25px;
+  }
+}

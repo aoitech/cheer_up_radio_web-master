@@ -1,0 +1,18 @@
+.form-wrapper {
+display: flex;
+justify-content: center;
+}
+.new-form {
+  width: 40%;
+}
+.new-field {
+  margin: 10px;
+}
+.new-label {
+  display: block;
+  font-size: 30px;
+}
+.top-btn {
+  margin-left: 30px;
+  font-size: 20px;
+}
